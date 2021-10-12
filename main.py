@@ -1,8 +1,10 @@
 import telebot
 from telebot import types
 
+
+
 bot = telebot.TeleBot("2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU")
-bot.set_webhook('/bot2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU')
+bot.set_webhook("https://api.telegram.org/bot2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU/setWebhook?url=https://dashboard.heroku.com/apps/exampleqbot")
 
 user_dict = {}
 
@@ -173,5 +175,3 @@ def change_gender(message):
 bot.enable_save_next_step_handlers(delay=2)
 
 bot.load_next_step_handlers()
-
-bot.infinity_polling()
