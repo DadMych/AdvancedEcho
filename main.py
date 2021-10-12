@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 
 bot = telebot.TeleBot("2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU")
+bot.set_webhook('/bot2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU')
 
 user_dict = {}
 
