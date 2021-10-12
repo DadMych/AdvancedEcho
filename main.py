@@ -1,11 +1,8 @@
 import telebot
 from telebot import types
-import os
-from flask import Flask, request
 
-TOKEN = '2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU'
-bot = telebot.TeleBot(TOKEN)
-server = Flask(__name__)
+bot = telebot.TeleBot("2064275827:AAHGY8DwPUzhsRfqqvSApWbef4rLfIe8DEU")
+
 
 user_dict = {}
 
@@ -177,21 +174,4 @@ bot.enable_save_next_step_handlers(delay=2)
 
 bot.load_next_step_handlers()
 
-
-@server.route('/' + TOKEN, methods=['POST'])
-def getMessage():
-    json_string = request.get_data().decode('utf-8')
-    update = telebot.types.Update.de_json(json_string)
-    bot.process_new_updates([update])
-    return "!", 200
-
-
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url='https://exampleqbot.herokuapp.com:433/bot' + TOKEN)
-    return "!", 200
-
-
-if __name__ == "__main__":
-    server.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+bot.infinity_polling()
