@@ -90,9 +90,9 @@ def main_menu(message):
         bot.send_message(message.chat.id,
                          "Твоє ім'я: " + user.name + "\nТобі " + user.age +
                          " років і ти " + user.gender.lower())
-        return bot.send_message(message.chat.id, "Повертаємось у головне меню.\n"
+        return bot.register_next_step_handler(bot.send_message(message.chat.id, "Повертаємось у головне меню.\n"
                                                  "Тут ти можеш подивитися інформацію про себе, а також перейти у налаштування.",
-                                reply_markup=menu_markup)
+                                reply_markup=menu_markup), main_menu)
     if message.text == 'Налаштування':
         settings(message)
         return
