@@ -32,16 +32,16 @@ if __name__ == "__main__":
 
 user_dict = {}
 
-gender_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+gender_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
 gender_markup.add('Чоловік', 'Жінка', 'Назад')
 
-only_back_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+only_back_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
 only_back_markup.add('Назад')
 
-menu_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+menu_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
 menu_markup.add('Інформація про мене', 'Налаштування', 'Назад')
 
-settings_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+settings_markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True)
 settings_markup.add('Змінити ім`я', 'Змінити вік', 'Змінити стать', 'Назад')
 
 hide_markup = types.ReplyKeyboardRemove()
